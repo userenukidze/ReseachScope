@@ -63,7 +63,7 @@ const App = () => {
     setPopupVisible(false);
 
 
-    fetch('gbaivol1server-production.up.railway.app/submit', {
+    fetch('https://gbaivol1server-production.up.railway.app/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
