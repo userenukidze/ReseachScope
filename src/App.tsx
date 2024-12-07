@@ -17,6 +17,7 @@ import { FaYoutube } from "react-icons/fa";
 import { RiPerplexityFill } from "react-icons/ri";
 import { RiImageCircleAiFill } from "react-icons/ri";
 import logo from './assets/appiconvol4.png';
+import ConfettiExplosion from 'react-confetti-explosion';
 
 
 const App = () => {
@@ -25,9 +26,11 @@ const App = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
+  const [isExploding, setIsExploding] = useState(false);
 
 
   const handleSignUp = () => {
+    setIsExploding(false);
     setPopupVisible(true);
   };
 
@@ -58,6 +61,7 @@ const App = () => {
 
 
 
+    setIsExploding(true);
     console.log('Name:', name);
     console.log('Email:', email);
     setPopupVisible(false);
@@ -100,6 +104,7 @@ const App = () => {
           <p style={{ fontFamily: 'Lato',textAlign:"center", color: 'white', fontSize: 50, fontWeight: 700, }}>
             Best AI tools at your fingertips.
           </p>
+          {isExploding && <ConfettiExplosion />} 
          <p style={{ fontFamily: 'Lato',textAlign:"center", color: '#6a6a6a', fontSize: 20, fontWeight: 400 }}>
             Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more.
           </p>
