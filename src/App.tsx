@@ -63,7 +63,7 @@ const App = () => {
     setPopupVisible(false);
 
 
-    fetch('http://localhost:3000/submit', {
+    fetch('gbaivol1server-production.up.railway.app/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
