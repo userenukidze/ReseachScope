@@ -6,6 +6,8 @@ import mockup3 from './assets/mockup112.png';
 import mockup4 from './assets/mockup114.png';
 import mockup6 from './assets/mockup116.png';
 import mockup7 from './assets/frame4.png';
+import screenRecording from './assets/Screen_Recording_20241208_004537_Att38.mp4';
+
 
 
 // import appstore from './assets/appstore.png';
@@ -158,7 +160,7 @@ const App = () => {
 
 
           </div>
-        )}
+           )}
 
           
 
@@ -167,18 +169,33 @@ const App = () => {
              <img src={mockup3} alt="Sample" className="imagesStyle" />  
              <img src={mockup1} alt="Sample" className="imagesStyle" />  
              <img src={mockup7} alt="Sample" className="newImage1" />  
+             
 
            </div>
+
+           <p style={{ fontFamily: 'Lato',textAlign:"center", color: 'white', fontSize: 50, fontWeight: 700, marginTop: 40}}>
+            Demo Video
+          </p>
+
+
+           <div className="videoContainer" style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
+             <video width="360" height="800" controls style={{ borderRadius: 10, boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
+               <source src={screenRecording}  type="video/mp4" />
+               Your browser does not support the video tag.
+             </video>
+           </div>
+
+
 
         </div>
 
 
         <div className="showcaseRow">
 
-          <div className="explainerBox">
+          <div className="explainerBox" style={{marginTop:-100}}>
 
             <FaYoutube size={90} color='white'/>
-            <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 30, fontWeight: 700, }}>
+            <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 30, fontWeight: 700 }}>
               YouTube Summarizer
             </p>
             <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
