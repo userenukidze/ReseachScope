@@ -200,8 +200,10 @@ const App = () => {
             </p>
             <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
               {/* Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more. */}
-
-              Perfect for learners and professionals alike, it saves time by extracting key points and presenting them in a clear format. Whether you're catching up on educational content, staying informed with lectures, or reviewing tutorials, this AI-powered tool ensures you grasp the essence without watching hours of footage. Simply paste the URL, and let our smart summarizer do the rest—effortless and efficient!            </p>
+              Don't waste time bingewatching videos full time.
+              Turn 15 min videos into quick 2 min summaries
+              {/* Perfect for learners and professionals alike, it saves time by extracting key points and presenting them in a clear format. Whether you're catching up on educational content, staying informed with lectures, or reviewing tutorials, this AI-powered tool ensures you grasp the essence without watching hours of footage. Simply paste the URL, and let our smart summarizer do the rest—effortless and efficient!          */}
+                 </p>
           </div>
 
           <div className="explainerBox" style={{borderRadius:"50%",backgroundColor:"#222222",justifyContent:"center",alignItems:"center"}}>
@@ -234,7 +236,8 @@ const App = () => {
                   </p>
                   <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
                     {/* Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more. */}
-                    Our Perplexity News Bot keeps you instantly updated with the latest news and trends. Ask a question, and it delivers clear, accurate answers using real-time, reliable sources. Whether it’s breaking news, current events, or trending topics, this bot ensures you’re always in the know. Fast, easy, and smart—it’s your go-to tool for staying ahead.
+                    {/* Our Perplexity News Bot keeps you instantly updated with the latest news and trends. Ask a question, and it delivers clear, accurate answers using real-time, reliable sources. Whether it’s breaking news, current events, or trending topics, this bot ensures you’re always in the know. Fast, easy, and smart—it’s your go-to tool for staying ahead. */}
+                    Don't want to pay extra $20 for perplexity just to stay up to date with the latest news?
           
                   </p>
                 </div>
@@ -260,7 +263,9 @@ const App = () => {
                   </p>
                   <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
                     {/* Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more. */}
-                    Our Perplexity News Bot keeps you instantly updated with the latest news and trends. Ask a question, and it delivers clear, accurate answers using real-time, reliable sources. Whether it’s breaking news, current events, or trending topics, this bot ensures you’re always in the know. Fast, easy, and smart—it’s your go-to tool for staying ahead.
+                    {/* Our Perplexity News Bot keeps you instantly updated with the latest news and trends. Ask a question, and it delivers clear, accurate answers using real-time, reliable sources. Whether it’s breaking news, current events, or trending topics, this bot ensures you’re always in the know. Fast, easy, and smart—it’s your go-to tool for staying ahead. */}
+                    Don't want to pay extra $20 for perplexity just to stay up to date with the latest news?
+
           
                   </p>
                 </div>
@@ -284,7 +289,8 @@ const App = () => {
             </p>
             <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
               {/* Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more. */}
-              Our Image Generator, powered by the latest Stable Diffusion technology, turns your ideas into stunning visuals. Describe what you want, and it creates high-quality, detailed images in seconds. From art and design to creative projects, it’s perfect for bringing your imagination to life. Fast, powerful, and easy to use—your vision, made real.
+              {/* Our Image Generator, powered by the latest Stable Diffusion technology, turns your ideas into stunning visuals. Describe what you want, and it creates high-quality, detailed images in seconds. From art and design to creative projects, it’s perfect for bringing your imagination to life. Fast, powerful, and easy to use—your vision, made real. */}
+              Dalle sucks? Yeah, use latest Flux-schnell model for enhanced image generation.
               </p>
           </div>
 
