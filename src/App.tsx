@@ -29,6 +29,8 @@ const App = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [isExploding, setIsExploding] = useState(false);
+  const [signUpSpots, SetSignUpSpots] = useState(84);
+
 
 
   const handleSignUp = () => {
@@ -64,6 +66,7 @@ const App = () => {
 
 
     setIsExploding(true);
+    SetSignUpSpots(signUpSpots+1);
     console.log('Name:', name);
     console.log('Email:', email);
     setPopupVisible(false);
@@ -120,7 +123,23 @@ const App = () => {
             Sign up! 🚀
           </button>
 
+
+          
+
+          
+
           </div>
+
+
+
+          <p style={{ fontFamily: 'Lato',textAlign:"center", color: 'white', fontSize: 30, fontWeight: 700,marginTop:50 }}>
+          <span style={{ color: 'white' }}>Free</span> <span style={{ color: '#4335A7' }}>Premium</span> <span style={{ color: 'white' }}> signup spots</span>
+          </p>
+          <p style={{ fontFamily: 'Lato', textAlign: "center", fontSize: 25, fontWeight: 400 }}>
+            <span style={{ color: 'white' }}>{signUpSpots}</span>/<span style={{ color: '#6a6a6a' }}>100</span>
+          </p>
+
+
 
           {isPopupVisible && (
           <div className="popup">
