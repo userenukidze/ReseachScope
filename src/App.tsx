@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import './App.css';
 import { ReactFlow, Background, BackgroundVariant } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import ResearchlyLogo from './assets/ResearchlyFullMockupt1.png';
 import ResearchlyMockup2 from './assets/ResearchlyFullMockupt2.png';
 import ResearchlyMockup3 from './assets/ResearchlyFullMockupt3.png';
 import ResearchlyMockup4 from './assets/ResearchlyFullMockupt4.png';
@@ -28,7 +26,6 @@ import { FaXTwitter } from "react-icons/fa6";
 // import { RiImageCircleAiFill } from "react-icons/ri";
 // import logo from './assets/appiconvol4.png';
 // import ConfettiExplosion from 'react-confetti-explosion';
-import { color } from './../node_modules/@types/d3-color/index.d';
 
 
 const App = () => {
