@@ -274,3 +274,100 @@
   }
 
 }
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: none;
+}
+
+@media (min-width: 2121px) {
+  .showaceBox1 {
+    margin-bottom: 200px;
+    
+  }
+}
+
+@media (max-width: 1550px) {
+  .showaceBox1 {
+  }
+
+  .rightSideWebImage{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1250px) {
+  /* .showaceBox1 {
+    margin-bottom: -140px !important;
+    background-color: red;
+  } */
+  .rightSideWebImage{
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 950px) {
+  /* .showaceBox1 {
+    margin-bottom: -140px !important;
+    background-color: red;
+  } */
+  .ShowcaseHeading{
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 650px) {
+  /* .showaceBox1 {
+    margin-bottom: -140px !important;
+    background-color: red;
+  } */
+  .ShowcaseHeading{
+    width: 100% !important;
+    font-size: 30px !important;
+  }
+  .initialHeading{
+    width: 100% !important;
+  }
+  .footerButton{
+    margin-top: 50px !important;
+  }
+
+ 
+}
+
+@media (max-width: 500px) {
+  /* .showaceBox1 {
+    margin-bottom: -140px !important;
+    background-color: red;
+  } */
+
+  .initialHeading{
+    width: 100% !important;
+    font-size: 35px !important;
+  }
+  .footerButton{
+    margin-top: 50px !important;
+  }
+}
+
+.footerButton{
+  margin-top: 50px !important;
+}
+
+
+@media (max-width: 600px) {
+  
+  .rightSideWebImage{
+    width: 120% !important;
+  }
+}

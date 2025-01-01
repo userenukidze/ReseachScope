@@ -1,12 +1,20 @@
 import { useState } from 'react';
 import './App.css';
-import mockup1 from './assets/mockup113.png';
-import mockup2 from './assets/mockup111.png';
-import mockup3 from './assets/mockup112.png';
-import mockup4 from './assets/mockup114.png';
-import mockup6 from './assets/mockup116.png';
-import mockup7 from './assets/frame4.png';
-import screenRecording from './assets/Screen_Recording_20241208_004537_Att38.mp4';
+import { ReactFlow, Background, BackgroundVariant } from '@xyflow/react';
+import '@xyflow/react/dist/style.css';
+import ResearchlyLogo from './assets/ResearchlyFullMockupt1.png';
+import ResearchlyMockup2 from './assets/ResearchlyFullMockupt2.png';
+import ResearchlyMockup3 from './assets/ResearchlyFullMockupt3.png';
+import ResearchlyMockup4 from './assets/ResearchlyFullMockupt4.png';
+
+
+
+import logo from './assets/logo.png';
+
+
+import { FaXTwitter } from "react-icons/fa6";
+
+
 
 
 
@@ -15,82 +23,25 @@ import screenRecording from './assets/Screen_Recording_20241208_004537_Att38.mp4
 // import mockup5 from './assets/screen5.png';
 // import { FaApple } from "react-icons/fa";
 // import { IoLogoGooglePlaystore } from "react-icons/io5";
-import { FaYoutube } from "react-icons/fa";
-import { RiPerplexityFill } from "react-icons/ri";
-import { RiImageCircleAiFill } from "react-icons/ri";
-import logo from './assets/appiconvol4.png';
-import ConfettiExplosion from 'react-confetti-explosion';
+// import { FaYoutube } from "react-icons/fa";
+// import { RiPerplexityFill } from "react-icons/ri";
+// import { RiImageCircleAiFill } from "react-icons/ri";
+// import logo from './assets/appiconvol4.png';
+// import ConfettiExplosion from 'react-confetti-explosion';
+import { color } from './../node_modules/@types/d3-color/index.d';
 
 
 const App = () => {
 
-  const [isPopupVisible, setPopupVisible] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [isExploding, setIsExploding] = useState(false);
-  const [signUpSpots, SetSignUpSpots] = useState(84);
+  // const [isPopupVisible, setPopupVisible] = useState(false);
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [error, setError] = useState('');
+  // const [isExploding, setIsExploding] = useState(false);
+  // const [signUpSpots, SetSignUpSpots] = useState(84);
 
 
 
-  const handleSignUp = () => {
-    setIsExploding(false);
-    setPopupVisible(true);
-  };
-
-  const closePopup = () => {
-    setPopupVisible(false);
-    setError('');
-  };
-
-  const handleSave = () => {
-    // Handle save logic here
-
-    if (!name || !email) {
-      setError('Both fields are required.');
-      return;
-    }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address.');
-      return;
-    }else{
-
-    
-
-
-
-
-
-
-    setIsExploding(true);
-    SetSignUpSpots(signUpSpots+1);
-    console.log('Name:', name);
-    console.log('Email:', email);
-    setPopupVisible(false);
-
-
-    fetch('https://gbaivol1server-production.up.railway.app/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name: name, email: email }),
-    })
-      .then(response => response.json())
-      .then(data => console.log('Success:', data))
-      .catch(error => console.error('Error:', error));
-
-
-
-    setName('');
-    setEmail('');
-
-   }
-
-  };
 
 
 
@@ -99,270 +50,286 @@ const App = () => {
   
   return (
     <>
+      <div style={{ margin: 0, padding: 0 ,scrollbarWidth:"none"}}>
+        
 
-    <body>
+        <div style={{ position: "relative", zIndex: 999 ,scrollbarWidth:"none"}}>
+         <div
+           style={{
+             position: "absolute",
+             top: 0,
+             left: 0,
+             margin: "10px 0 0 20px"
+           }}
+         >
+           <img
+             src={logo}
+             alt="Researchly Logo"
+             style={{
+               height: 50,
+               objectFit: "contain"
+             }}
+           />
+         </div>
+       </div>
 
-      <div className="container">
-        <div className="heading"></div>        
-        <div className="mainHeading">
-          <img src={logo} alt="Sample" style={{ width: 120, height: 'auto' }} />
-          <p style={{ fontFamily: 'Lato',textAlign:"center", color: 'white', fontSize: 50, fontWeight: 700, }}>
-            Best AI tools at your fingertips.
+
+
+        {/* Fixed background stays in place */}
+        <div
+          className="backgroundContainer"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100vh",
+            zIndex: -1
+          }}
+        >
+          <ReactFlow defaultNodes={[]} defaultEdges={[]}>
+            <Background variant={BackgroundVariant.Lines} gap={30} color="#f1f1f1" lineWidth={0.5} />
+          </ReactFlow>
+        </div>
+
+        {/* Main content wrapper that scrolls with the page */}
+        <div className="container" style={{position:"relative", zIndex: 1,scrollbarWidth:"none"}}>
+
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: 500,
+          position: 'relative',
+          zIndex: 2,
+          
+        }}>
+          <h1
+           className='initialHeading'
+           style={{
+            marginTop:100,
+            fontFamily: 'Lato, sans-serif',
+            fontSize: '3.5rem',
+            color: '#333333',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginBottom: '1.5rem',
+            width: '80%',
+          }}>
+            AI-powered research  engine
+          </h1>
+
+
+          <p style={{
+            fontFamily: 'Lato, sans-serif',
+            fontSize: '1.2rem',
+            color: '#666666',
+            maxWidth: '600px',
+            textAlign: 'center',
+            lineHeight: '1.6',
+
+          }}>
+            Researchly saves you time and effort by finding the most relevant studies for your topic. Powered by AI, it scans over 222 million papers to give you accurate and focused results in seconds.            
           </p>
-          {isExploding && <ConfettiExplosion />} 
-         <p style={{ fontFamily: 'Lato',textAlign:"center", color: '#6a6a6a', fontSize: 20, fontWeight: 400 }}>
-            Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more.
-          </p>
-          <div className="buttonsContainer" style={{width:"100%",height:60,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",gap:5,marginTop:40}}>
 
-          {/* <button style={{height:60,width:160,borderRadius:7,display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",gap:5}}>
-           <IoLogoGooglePlaystore size={25} />
-           Play store
-          </button> */}
-          <button onClick={()=>{handleSignUp()}}          style={{color:"black",height:50,width:150,borderRadius:7,backgroundColor:"white",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",gap:5}}>
-            Sign up! 🚀
+
+
+          <button style={{
+            fontFamily: 'Lato, sans-serif',
+            fontSize: '1.1rem',
+            color: 'white',
+            backgroundColor: '#222222',
+            border: 'none',
+            borderRadius: '15px',
+            padding: '12px 32px',
+            cursor: 'pointer',
+            transition: 'transform 0.2s ease',
+            marginTop: '2rem'
+          }} 
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            Get Started
           </button>
-
-
-          
-
-          
-
-          </div>
-
-
-
-          <p style={{ fontFamily: 'Lato',textAlign:"center", color: 'white', fontSize: 30, fontWeight: 700,marginTop:50 }}>
-          <span style={{ color: 'white' }}>Free</span> <span style={{ color: '#4335A7' }}>Premium</span> <span style={{ color: 'white' }}> signup spots</span>
-          </p>
-          <p style={{ fontFamily: 'Lato', textAlign: "center", fontSize: 25, fontWeight: 400 }}>
-            <span style={{ color: 'white' }}>{signUpSpots}</span>/<span style={{ color: '#6a6a6a' }}>100</span>
-          </p>
-
-
-
-          {isPopupVisible && (
-          <div className="popup">
-            <div className="popup-content">
-
-              <span className="close" onClick={closePopup}>&times;</span>
-              <h2 style={{marginTop:10}}>Thank you for your interest! 🤙</h2>
-              <p> Get Early access!</p>
-
-              <input
-                type="text"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                style={{ width: '80%', padding: '10px', borderRadius: '5px',  border:`1px solid ${error && !name ? '#D2042D' : '#ccc'}` ,marginTop:20}}
-              />
-
-              {error && !name && <label style={{ fontSize: 10, color: "#D2042D" }}>{error}</label>}
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                style={{ width: '80%', padding: '10px', borderRadius: '5px', border:`1px solid ${error && !name ? '#D2042D' : '#ccc'}` ,marginTop:20 }}
-              />
-
-
-              {error && !name && <label style={{ fontSize: 10, color: "#D2042D" }}>{error}</label>}
-
-              <button onClick={handleSave} style={{ padding: '10px 20px', borderRadius: '5px', backgroundColor: 'white', color: 'black', border: 'none',marginTop:15 }}>
-                Save 🎉
-              </button>
-              {/* Add your sign-up form here */}
-            </div>
-
-
-
-
-          </div>
-           )}
-
-          
-
-           <div className="showImagesRow">
-             <img src={mockup2} alt="Sample" className="imagesStyle" />  
-             <img src={mockup3} alt="Sample" className="imagesStyle" />  
-             <img src={mockup1} alt="Sample" className="imagesStyle" />  
-             <img src={mockup7} alt="Sample" className="newImage1" />  
-             
-
-           </div>
-
-           <p style={{ fontFamily: 'Lato',textAlign:"center", color: 'white', fontSize: 50, fontWeight: 700, marginTop: 40}}>
-            Demo Video
-          </p>
-
-
-           <div className="videoContainer" style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
-             <video width="360" height="800" controls style={{ borderRadius: 10, boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
-               <source src={screenRecording}  type="video/mp4" />
-               Your browser does not support the video tag.
-             </video>
-           </div>
-
-
-
-        </div>
-
-
-        <div className="showcaseRow">
-
-          <div className="explainerBox" style={{marginTop:-100}}>
-
-            <FaYoutube size={90} color='white'/>
-            <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 30, fontWeight: 700 }}>
-              YouTube Summarizer
-            </p>
-            <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
-              {/* Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more. */}
-              Don't waste time bingewatching videos full time.
-              Turn 15 min videos into quick 2 min summaries
-              {/* Perfect for learners and professionals alike, it saves time by extracting key points and presenting them in a clear format. Whether you're catching up on educational content, staying informed with lectures, or reviewing tutorials, this AI-powered tool ensures you grasp the essence without watching hours of footage. Simply paste the URL, and let our smart summarizer do the rest—effortless and efficient!          */}
-                 </p>
-          </div>
-
-          <div className="explainerBox" style={{borderRadius:"50%",backgroundColor:"#222222",justifyContent:"center",alignItems:"center"}}>
-
-          <img src={mockup4} alt="Sample" style={{ width: 300, height: 'auto',marginTop:60 }} />  
-           
-          </div>
-
-
-        </div>
-
-
-        <div className="showcaseRow2">
-
-
-              <div className="explainerBox" style={{borderRadius:"50%",backgroundColor:"#222222",justifyContent:"center",alignItems:"center"}}>
-              
-              <img src={mockup6} alt="Sample" style={{ width: 300, height: 'auto',marginTop:60 }} />  
-               
-              </div>
-              
-              
-              
-                <div className="explainerBox">
-              
-                  {/* <FaYoutube size={90} color='red'/> */}
-                  <RiPerplexityFill size={90}/>
-                  <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 30, fontWeight: 700, }}>
-                    Perplexity
-                  </p>
-                  <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
-                    {/* Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more. */}
-                    {/* Our Perplexity News Bot keeps you instantly updated with the latest news and trends. Ask a question, and it delivers clear, accurate answers using real-time, reliable sources. Whether it’s breaking news, current events, or trending topics, this bot ensures you’re always in the know. Fast, easy, and smart—it’s your go-to tool for staying ahead. */}
-                    Don't want to pay extra $20 for perplexity just to stay up to date with the latest news?
-          
-                  </p>
-                </div>
-              
-                
         </div>
 
 
 
-        <div className="showcaseRow3">
 
 
-             
-              
-              
-              
-                <div className="explainerBox">
-              
-                  {/* <FaYoutube size={90} color='red'/> */}
-                  <RiPerplexityFill size={90}/>
-                  <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 30, fontWeight: 700, }}>
-                    Perplexity
-                  </p>
-                  <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
-                    {/* Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more. */}
-                    {/* Our Perplexity News Bot keeps you instantly updated with the latest news and trends. Ask a question, and it delivers clear, accurate answers using real-time, reliable sources. Whether it’s breaking news, current events, or trending topics, this bot ensures you’re always in the know. Fast, easy, and smart—it’s your go-to tool for staying ahead. */}
-                    Don't want to pay extra $20 for perplexity just to stay up to date with the latest news?
 
-          
-                  </p>
-                </div>
-                
+        <div className="showaceBox1" style={{
+          width:"100%",
+          // maxHeight:700,
+          marginTop:50,
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}>
 
+         <h1
+         className='ShowcaseHeading'
+         style={{
+            fontFamily: 'Lato, sans-serif',
+            fontSize: 35,
+            color: '#333333',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            width: '60%',
+            
+          }}>
+            Enter your reseach topic & generate Optimized queries
+          </h1>
 
-                <div className="explainerBox" style={{borderRadius:"50%",backgroundColor:"#222222",justifyContent:"center",alignItems:"center",marginTop:60}}>
-                 <img src={mockup6} alt="Sample" style={{ width: 300, height: 'auto',marginTop:120 }} />  
-                </div>
-                
-        </div>
-
-
-        <div className="showcaseRow">
-
-          <div className="explainerBox">
-
-            <RiImageCircleAiFill  size={90} color='white'/>
-            <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 30, fontWeight: 700, }}>
-              Image Generator
-            </p>
-            <p style={{ fontFamily: 'Lato', color: 'white', fontSize: 18, fontWeight: 400,width:"100%",textAlign:"center",letterSpacing:0.5 }}>
-              {/* Unlimited power of GPT-4o, Perplexity, Stable Diffusion and more. */}
-              {/* Our Image Generator, powered by the latest Stable Diffusion technology, turns your ideas into stunning visuals. Describe what you want, and it creates high-quality, detailed images in seconds. From art and design to creative projects, it’s perfect for bringing your imagination to life. Fast, powerful, and easy to use—your vision, made real. */}
-              Dalle sucks? Yeah, use latest Flux-schnell model for enhanced image generation.
-              </p>
-          </div>
-
-          <div className="explainerBox" style={{borderRadius:"50%",backgroundColor:"#222222",justifyContent:"center",alignItems:"center"}}>
-
-          <img src={mockup1} alt="Sample" style={{ width: 300, height: 'auto',marginTop:60 }} />  
-           
-          </div>
-
+          <img 
+              className='rightSideWebImage'
+              src={ResearchlyMockup2}
+              alt="Researchly Logo"
+              style={{
+                width: "80%",
+                objectFit: "cover",                
+              }}
+            />
 
         </div>
 
 
 
 
-          <p style={{ textAlign:"center",fontFamily: 'Lato', color: '#bebebe', fontSize: 15, fontWeight: 400, marginTop:120}}>
-          Copyright © 2024 Kwant Development LLC
-          </p>
 
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-            <a href="https://sites.google.com/view/greyboxaitermsofuse/home"  target="_blank" rel="noopener noreferrer" style={{ textAlign:"center",fontFamily: 'Lato', color: '#bebebe', fontSize: 12, fontWeight: 400, marginTop: 10, marginBottom: 15 }}>
-              Terms of Service   
-            </a>
 
-            <p style={{height:"100%",width:2,backgroundColor:"white"}}></p>
+        <div className="showaceBox1" style={{
+          width:"100%",
+          marginTop:50,
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}>
 
-            <a href="https://sites.google.com/view/greyboxaiprivacypolicy/home"  target="_blank" rel="noopener noreferrer" style={{ textAlign:"center",fontFamily: 'Lato', color: '#bebebe', fontSize: 12, fontWeight: 400, marginTop: 10, marginBottom: 15 }}>
-              Privacy Policy   
-            </a>
+         <h1 
+         className='ShowcaseHeading'
+         style={{
+            fontFamily: 'Lato, sans-serif',
+            fontSize: 35,
+            color: '#333333',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            width: '60%',
+            
+          }}>
+            Wait for our engine to retrieve most relevant studies from 222,960,367 papers.
+          </h1>
 
-            <p style={{height:"100%",width:2,backgroundColor:"white"}}></p>
+          <img 
+              className='rightSideWebImage'
+              src={ResearchlyMockup3}
+              alt="Researchly Logo"
+              style={{
+                width: "80%",
+                objectFit: "cover",                
+              }}
+            />
 
-            <a style={{ textAlign:"center",fontFamily: 'Lato', color: '#bebebe', fontSize: 12, fontWeight: 400, marginTop: 10, marginBottom: 15 }}>
-              infogreyboxai@gmail.com
-            </a>
+        </div>
+
+
+
+
+
+        <div className="showaceBox1" style={{
+          width:"100%",
+          marginTop:50,
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}>
+
+          
+         <h1
+         className='ShowcaseHeading'
+         style={{
+            fontFamily: 'Lato, sans-serif',
+            fontSize: 35,
+            color: '#333333',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            width: '60%',
+            
+          }}>
+            If still not satisfied use our pre-trained OpenAI powered AI.
+          </h1>
+
+          <img 
+              className='rightSideWebImage'
+              src={ResearchlyMockup4}
+              alt="Researchly Logo"
+              style={{
+                width: "80%",
+                objectFit: "cover",                
+              }}
+            />
+
+          
+
+        </div>
+
+
+
+         
+
+
+
+            <button 
+              className='footerButton'
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%',
+                marginBottom: 10,
+                flexDirection: "row",
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              onClick={() => {
+                const links = [
+                  'https://www.example.com',
+                  'https://www.anotherexample.com',
+                  'https://www.yetanotherexample.com'
+                ];
+                const randomLink = links[Math.floor(Math.random() * links.length)];
+                window.open(randomLink, '_blank');
+              }}
+            >
+              <FaXTwitter color='black' size={20}/>
+            </button>
+
+
+
+          <div style={{display: 'flex',alignItems: 'center',justifyContent: 'center',width: '100%',marginBottom:20,flexDirection:"row",gap:10}}>
+            <p style={{color:"black",fontSize:15}}>support : inforesearchly@gmail.com</p>
+            {/* <p style={{color:"black",fontSize:12}}>creator : enukidzedachikm@gmail.com</p> */}
+
           </div>
+          
 
-          {/* <p style={{ fontFamily: 'Lato', color: '#bebebe', fontSize: 12, fontWeight: 400, marginTop:10,marginBottom:30}}>
-            contact us infogreyboxai@gmail.com
-          </p> */}
-
-
+      
        
-
-
-
       </div>
 
-     
-      </body>
+      {/* <div className="footerBox" style={{marginTop:-30,width:"100%",height:100,display: 'flex',alignItems: 'center',flexDirection: 'column',borderTop:"1px solid rgb(170, 170, 170)"}}>
+
+      </div> */}
+
+      </div>
+    </>
 
  
-    </>
   );
 };
 
