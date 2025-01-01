@@ -127,7 +127,7 @@ const App = () => {
             lineHeight: '1.6',
 
           }}>
-            Researchly saves you time and effort by finding the most relevant studies for your topic. Powered by AI, it scans over 222 million papers to give you accurate and focused results in seconds.            
+            ResearchScope saves you time and effort by finding the most relevant studies for your topic. Powered by AI, it scans over 222 million papers to give you accurate and focused results in seconds.            
           </p>
 
 
@@ -254,7 +254,7 @@ const App = () => {
             width: '60%',
             
           }}>
-            If still not satisfied use our pre-trained OpenAI powered AI.
+            If still not satisfied, use our pre-trained AI.
           </h1>
 
           <img 
@@ -277,7 +277,7 @@ const App = () => {
 
 
 
-            <button 
+            <div 
               className='footerButton'
               style={{
                 display: 'flex',
@@ -294,22 +294,16 @@ const App = () => {
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               onClick={() => {
-                const links = [
-                  'https://www.example.com',
-                  'https://www.anotherexample.com',
-                  'https://www.yetanotherexample.com'
-                ];
-                const randomLink = links[Math.floor(Math.random() * links.length)];
-                window.open(randomLink, '_blank');
+                window.open('https://x.com/D_enukidze');
               }}
             >
               <FaXTwitter color='black' size={20}/>
-            </button>
+            </div>
 
 
 
           <div style={{display: 'flex',alignItems: 'center',justifyContent: 'center',width: '100%',marginBottom:20,flexDirection:"row",gap:10}}>
-            <p style={{color:"black",fontSize:15}}>support : inforesearchly@gmail.com</p>
+            <p style={{color:"black",fontSize:15}}>support : inforesearchscope@gmail.com</p>
             {/* <p style={{color:"black",fontSize:12}}>creator : enukidzedachikm@gmail.com</p> */}
 
           </div>

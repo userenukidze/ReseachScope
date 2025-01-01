@@ -326,6 +326,10 @@ body {
   }
 }
 
+.footerButton{
+  outline: none;
+}
+
 @media (max-width: 650px) {
   /* .showaceBox1 {
     margin-bottom: -140px !important;
