@@ -144,6 +144,9 @@ const App = () => {
             transition: 'transform 0.2s ease',
             marginTop: '2rem'
           }} 
+          onClick={() => {
+            window.open('https://researchscope.up.railway.app/');
+          }}
           onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
           onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
